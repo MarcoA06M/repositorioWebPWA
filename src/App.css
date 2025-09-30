@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(90deg, #640d59, #001e41);
+  color: aliceblue;
+  position: relative;
+}
+
+.gradient-background-blob {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.gradient-blob {
+  position: absolute;
+  opacity: 0.3;
+  background: linear-gradient(to top right, #ff80b5, #9089fc);
+  filter: blur(3xl);
+  transform-origin: center;
+  animation: move 25s linear infinite;
+}
+
+@keyframes move {
+  0%, 100% {
+    transform: translateY(5%) translateX(-5%) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-5%) translateX(5%) rotate(5deg);
+  }
+}
